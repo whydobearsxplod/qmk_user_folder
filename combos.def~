@@ -50,9 +50,9 @@ COMB(domath,DOMATH,KC_E, KC_M)
 COMB(mathfrac,MATHFRAC,KC_M, KC_F)
 COMB(mathenvcenter,MATHENVCENTER,KC_M, KC_E, KC_C)
 COMB(copydown,COPYDOWN,KC_C, KC_D)
-SUBS(mathalpha,SS_TAP(X_BSLS)”alpha “,KC_M,LT(_NAV,KC_A))
-SUBS(mathbeta,SS_TAP(X_BSLS)”beta “,KC_M,KC_B)
-SUBS(mathpartial,SS_TAP(X_BSLS)”partial “,KC_M,KC_P)
+SUBS(mathalpha,SS_TAP(X_BSLS)"alpha ",KC_M,LT(_NAV,KC_A))
+SUBS(mathbeta,SS_TAP(X_BSLS)"beta ",KC_M,KC_B)
+SUBS(mathpartial,SS_TAP(X_BSLS)"partial ",KC_M,KC_P)
 COMB(linedown,LINEDOWN,KC_D, KC_L)
 
 // VIM-LIKE EDITING //
@@ -64,11 +64,17 @@ COMB(cutline,CUTLINE,KC_X, KC_L)
 COMB(cutline2,CUTLINE    ,MT(MOD_LCTL,KC_X), KC_L)
 COMB(copyline,COPYLINE,KC_C, KC_L)
 COMB(copyline2,COPYLINE,MT(MOD_LALT,KC_C), KC_W)
+SUBS(killtoendword,SS_DOWN(X_LCTRL)SS_TAP(X_DEL)SS_UP(X_LCTRL)SS_TAP(X_LEFT),KC_K, KC_W, KC_E)
+SUBS(killtobeginingword,SS_DOWN(X_LCTRL)SS_TAP(X_BCSP)SS_UP(X_LCTRL)SS_TAP(X_RIGHT),KC_K, KC_W, KC_B)
+SUBS(killtonextword,SS_DOWN(X_LCTRL)SS_TAP(X_DEL)SS_UP(X_LCTRL),KC_K, KC_W, KC_F)
+SUBS(killtoprevword,SS_DOWN(X_LCTRL)SS_TAP(X_BCSP)SS_UP(X_LCTRL),KC_K, KC_W, KC_D)
+SUBS(killword,SS_DOWN(X_LCTRL)SS_TAP(X_LEFT)SS_TAP(X_DEL)SS_UP(X_LCTRL)SS_TAP(X_SPACE)SS_TAP(X_LEFT),KC_K, KC_W)
+
 
 // APP LAUNCHING //
-SUBS(chrome,SS_TAP(X_GUI)”chrome”SS_TAP(X_ENT),KC_C,KC_H,KC_R)
-SUBS(lyx,SS_TAP(X_GUI)”lyx”SS_TAP(X_ENT),KC_L,KC_Y,KC_X)
-SUBS(qmk,SS_TAP(X_GUI)”toolbox”SS_TAP(X_ENT),KC_Q,KC_M,KC_K)
+SUBS(chrome,SS_LGUI("s")"chrome"SS_TAP(X_ENT),KC_C,KC_H,KC_R)
+SUBS(lyx,SS_LGUI("s")"lyx"SS_TAP(X_ENT),KC_L,KC_Y,KC_X)
+SUBS(qmk,SS_LGUI("s")"toolbox"SS_TAP(X_ENT),KC_Q,KC_M,KC_K)
 
 // RESET //
-COMBO(reset,RESET,KC_R,KC_E,KC_T)
+COMB(reset,RESET,KC_R,KC_E,KC_S,KC_T)

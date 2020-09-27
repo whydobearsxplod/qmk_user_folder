@@ -1,18 +1,33 @@
+// TAB //
 COMB(tab,KC_TAB,LT(_NAV,KC_A), KC_S)
 COMB(tab2,KC_TAB,KC_A, KC_S)
+
+// ESC //
 COMB(esc,KC_ESC,KC_Q, KC_W)
+
+// BACKSPACE and DELETE //
 COMB(bspc,KC_BSPC,KC_O, KC_P)
 COMB(del,KC_DEL,KC_J, KC_K)
 COMB(bspc2,KC_BSPC,KC_D, KC_F)
 COMB(bspc3,KC_BSPC,KC_END, KC_PGUP)
+
+// ENTER //
 COMB(ent,KC_ENT,KC_L, KC_QUOT)
 COMB(ent2,KC_ENT,KC_RIGHT, KC_PGDN)
+
+// PUNCTUATION and SYMBOLS // 
 COMB(bsls,KC_BSLS,KC_F, KC_J)
 COMB(slsh,KC_SLSH,KC_COMMA, MT(MOD_RSFT,KC_DOT))
 COMB(grv,KC_GRV,KC_W, KC_E)
+
+// SPACE FOR 30% BOARDS //
 COMB(spc1,KC_SPACE,KC_K, KC_L)
 COMB(spc2,KC_SPACE,KC_S, KC_D)
+
+// MODS //
 COMB(gui,KC_LGUI,KC_LCTRL, KC_RALT)
+
+// FUNCTION KEYS //
 COMB(f1,KC_F1,KC_F, KC_1)
 COMB(f2,KC_F2,KC_F, KC_2)
 COMB(f3,KC_F3,KC_F, KC_3)
@@ -25,9 +40,22 @@ COMB(f9,KC_F9,KC_F, KC_9)
 COMB(f10,KC_F10,KC_F, KC_0)
 COMB(f11,KC_F11,KC_G, KC_1)
 COMB(f12,KC_F12,KC_G, KC_2)
+
+// LAYER LOCKING //
 COMB(locknav,TO(_NAV),KC_K, KC_D)
 COMB(locknav2,TO(_BASE),KC_BSPC, KC_DOWN)
+
+// LYX and LATEX //
 COMB(domath,DOMATH,KC_E, KC_M)
+COMB(mathfrac,MATHFRAC,KC_M, KC_F)
+COMB(mathenvcenter,MATHENVCENTER,KC_M, KC_E, KC_C)
+COMB(copydown,COPYDOWN,KC_C, KC_D)
+SUBS(mathalpha,SS_TAP(X_BSLS)”alpha “,KC_M,LT(_NAV,KC_A))
+SUBS(mathbeta,SS_TAP(X_BSLS)”beta “,KC_M,KC_B)
+SUBS(mathpartial,SS_TAP(X_BSLS)”partial “,KC_M,KC_P)
+COMB(linedown,LINEDOWN,KC_D, KC_L)
+
+// VIM-LIKE EDITING //
 COMB(cutword,CUTWORD,KC_X, KC_W)
 COMB(cutword2,CUTWORD    ,MT(MOD_LCTL,KC_C), KC_W)
 COMB(copyword,COPYWORD,KC_C, KC_W)
@@ -36,14 +64,11 @@ COMB(cutline,CUTLINE,KC_X, KC_L)
 COMB(cutline2,CUTLINE    ,MT(MOD_LCTL,KC_X), KC_L)
 COMB(copyline,COPYLINE,KC_C, KC_L)
 COMB(copyline2,COPYLINE,MT(MOD_LALT,KC_C), KC_W)
-COMB(linedown,LINEDOWN,KC_D, KC_L)
-COMB(mathfrac,MATHFRAC,KC_M, KC_F)
-COMB(mathenvcenter,MATHENVCENTER,KC_M, KC_E, KC_C)
-COMB(copydown,COPYDOWN,KC_C, KC_D)
-SUBS(mathalpha,SS_TAP(X_BSLS)"alpha ",KC_M,LT(_NAV,KC_A))
-SUBS(mathbeta,SS_TAP(X_BSLS)"beta ",KC_M,KC_B)
-SUBS(mathpartial,SS_TAP(X_BSLS)"partial ",KC_M,KC_P)
+
+// APP LAUNCHING //
 SUBS(chrome,SS_TAP(X_GUI)”chrome”SS_TAP(X_ENT),KC_C,KC_H,KC_R)
 SUBS(lyx,SS_TAP(X_GUI)”lyx”SS_TAP(X_ENT),KC_L,KC_Y,KC_X)
 SUBS(qmk,SS_TAP(X_GUI)”toolbox”SS_TAP(X_ENT),KC_Q,KC_M,KC_K)
+
+// RESET //
 COMBO(reset,RESET,KC_R,KC_E,KC_S,KC_T)

@@ -36,17 +36,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } 
       break;
-      
-   case PASTE:
-      if (record->event.pressed) {
-             SEND_STRING(SS_LCTL("v"));
-         if (is_shift_lock_active) {
-          is_shift_lock_active = false;
-          unregister_code(KC_LSFT);
-        }
-      } 
-      break;
-      
+
       case MATHFRAC:
       if (record->event.pressed) {
 	SEND_STRING(SS_TAP(X_BSLS)"frac ");

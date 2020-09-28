@@ -23,7 +23,6 @@ enum custom_keycodes {
   DOMATH,
   CUT,
   COPY,
-  PASTE,
   COPYDOWN, 
   CUTWORD,
   COPYWORD,

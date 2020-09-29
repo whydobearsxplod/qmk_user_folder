@@ -22,6 +22,19 @@ DYNAMIC_MACRO_ENABLE = yes
 SRC += whydobearsxplod.c
 endif
 
+ifeq ($(strip $(KEYBOARD)), omega)
+TAP_DANCE_ENABLE = no
+COMBO_ENABLE = yes
+RGBLIGHT_ENABLE = no
+NKRO_ENABLE = yes
+LED_ANIMATIONS = no
+MOUSEKEY_ENABLE = no
+BOOTLOADER = caterina
+DYNAMIC_MACRO_ENABLE = yes
+SRC += whydobearsxplod.c
+endif
+
+
 
 ifeq ($(strip $(KEYBOARD)), underscore33)
 TAP_DANCE_ENABLE = no
